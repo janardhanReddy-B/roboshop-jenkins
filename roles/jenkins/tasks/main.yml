@@ -6,6 +6,6 @@
     url: http://172.31.7.26:8080
     user: admin
   loop:
-    - {repoName: "cart", COMPONENT: "cart"}
+    - {repoName: "cart", componentName: "cart"}
 
 
