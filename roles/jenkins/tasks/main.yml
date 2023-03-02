@@ -1,11 +1,19 @@
-- name: Create a folder inside jenkins
+- name: Create jenkins pipeline jobs
   community.general.jenkins_job:
     config: "{{ lookup('template', 'templates/pipeline.xml') }}"
-    name: test
+    name: {{item.folderName}}{{item.jobName}}
     token: "11910207df2a2e8b3e1ed155f6cff9cf09"
     url: http://172.31.7.26:8080
     user: admin
-  loop:
-    - {repoName: "cart", componentName: "cart"}
+  loop: "{{pipeline}}"
 
 
+
+- name: Create jenkins floders
+  community.general.jenkins_job:
+    config: "{{ lookup('template', 'templates/folder.xml') }}"
+    name: {{item.Name}}
+    token: "11910207df2a2e8b3e1ed155f6cff9cf09"
+    url: http://172.31.7.26:8080
+    user: admin
+  loop: "{{folders}}"
