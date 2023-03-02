@@ -9,3 +9,5 @@ pipeline:
     - { jobName: "payment", folderName: "CI-pipelines/", repoName: "payment", componentName: "payment" }
     - { jobName: "shipping", folderName: "CI-pipelines/", repoName: "shipping", componentName: "shipping" }
 
+
+
