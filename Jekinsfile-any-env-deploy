@@ -1,9 +1,10 @@
 pipeline {
   agent any
+
   parameters {
-      string(name: 'COMPONENT', defaultValue: '', description: 'Which Component')
-      string(name: 'ENV', defaultValue: '', description: 'Which Env')
-      string(name: 'APP_VERSION', defaultValue: '', description: 'Which App Version')
+    string(name: 'COMPONENT', defaultValue: '', description: 'Which Component')
+    string(name: 'ENV', defaultValue: '', description: 'Which Env')
+    string(name: 'APP_VERSION', defaultValue: '', description: 'Which App Version')
   }
 
   environment {
@@ -11,6 +12,7 @@ pipeline {
   }
 
   stages {
+
     stage('Git Clone') {
       steps {
         git branch: 'main', url: "https://github.com/janardhanReddy-B/roboshop-ansible.git"
